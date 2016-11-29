@@ -27,6 +27,9 @@ from theano.tensor.nnet.ConvGrad3D import ConvGrad3D
 from theano.tensor.nnet.ConvTransp3D import ConvTransp3D
 
 
+
+
+
 def conv2d_corr(inputs, filters, border_mode="valid",
                 subsample=(1, 1), conv_mode='conv',
                 filter_dilation=(1, 1)):
@@ -1101,3 +1104,28 @@ class TestBilinearUpsampling(unittest.TestCase):
         f_1D = theano.function([], mat_1D, mode=self.compile_mode)
         f_2D = theano.function([], mat_2D, mode=self.compile_mode)
         utt.assert_allclose(f_1D(), f_2D(), rtol=1e-06)
+
+#TM copying the TestConvTypes setup, maybe doing it wrong
+class TestConv2dGrads(unittest.TestCase):
+    
+    def setUp(self):
+        #TM anything to go here?
+    
+    def get_outputs_of_conv2d_grad_wrt_inputs
+        
+    def test_conv2d_grad_wrt_inputs():
+        """Compares calculated abstract grads wrt inputs with the fwd grads
+
+        This method checks the outputs of conv2_grad_wrt_inputs against
+        the outputs of T.nnet.conv forward grads to make sure the
+        results are the same.
+
+        """
+    def test_conv2d_grad_wrt_weights():
+        """Compares calculated abstract grads wrt weights with the fwd grads
+
+        This method checks the outputs of conv2_grad_wrt_weights against
+        the outputs of T.nnet.conv forward grads to make sure the
+        results are the same.
+
+        """
